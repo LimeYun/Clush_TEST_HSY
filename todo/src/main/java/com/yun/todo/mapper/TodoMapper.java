@@ -33,7 +33,4 @@ public interface TodoMapper {
     // id로 삭제
     public int deleteById(String id);
 
-
-
-    
 }
