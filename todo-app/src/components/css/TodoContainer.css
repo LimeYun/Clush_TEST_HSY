@@ -88,10 +88,10 @@ ul { margin: 0; padding: 0; list-style-type: none; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 10px 10px 0;
+    margin: 10px 0 10px 0;
     padding: 20px;
     border: 2px solid cornflowerblue;
-    border-radius: 8px;
+    border-radius: 3px;
     color: royalblue;
     font-size: 18px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
@@ -100,3 +100,19 @@ ul { margin: 0; padding: 0; list-style-type: none; }
 .todoList::-webkit-scrollbar {
     display: none;
 }
+
+input[type="checkbox"] {
+    width: 20px; 
+    height: 20px;
+    cursor: pointer;
+    accent-color: royalblue;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  input[type="checkbox"]:checked {
+    accent-color: royalblue; 
+    border-color: royalblue;
+    background-color: royalblue;
+  }

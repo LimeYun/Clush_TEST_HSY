@@ -1,10 +1,12 @@
 package com.yun.todo.controller;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
-@Controller
+@RestController
 public class HomeController {
     
     @GetMapping("")
@@ -12,4 +14,8 @@ public class HomeController {
         return "redirect:/swagger-ui/index.html";
     }
     
+    @GetMapping("/kakao")
+    public ResponseEntity<String> kakaoAuthCallback(@RequestParam String code) {
+        return ResponseEntity.ok("카카오 인가 코드: " + code);
+    }
 }

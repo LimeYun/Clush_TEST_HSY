@@ -67,7 +67,7 @@ public class TodoController {
     @PutMapping()
     public ResponseEntity<?> updateTodo(@RequestBody Todos todos) {
         try {
-            boolean result = todoService.update(todos);
+            boolean result = todoService.updateById(todos);
             if (result) {
                 return new ResponseEntity<>("일정 수정 성공", HttpStatus.OK);
             } else {
@@ -91,5 +91,26 @@ public class TodoController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/date")
+    public ResponseEntity<?> getTodayTodos() {
+        try {
+            List<Todos> todayTodos = todoService.finbByTodosDate();
+            return new ResponseEntity<>(todayTodos, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/send")
+    public ResponseEntity<?> sendTodayTodo() {
+        try {
+            todoService.sendTodayTodos();
+            return new ResponseEntity<>("오늘의 할일을 전송했습니다.", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     
 }

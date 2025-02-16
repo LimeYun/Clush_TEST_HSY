@@ -18,17 +18,15 @@ public interface TodoService {
     // id로 조회
     public Todos selectById(String id);
 
-    // 수정
-    public boolean update(Todos todos);
-
     // id로 수정
     public boolean updateById(Todos todos);
-
-    // 삭제
-    public boolean delete(Long no);
 
     // id로 삭제
     public boolean deleteById(String id);
 
-    
+    public List<Todos> finbByTodosDate();
+
+    public String generateTodoMessage();
+
+    public void sendTodayTodos();
 }

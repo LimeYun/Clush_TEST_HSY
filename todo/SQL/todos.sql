@@ -5,14 +5,14 @@ CREATE TABLE todos (
 	`id`	VARCHAR(64)	NOT NULL	COMMENT 'UK',
 	`name`	TEXT	NOT NULL	COMMENT '할일',
 	`status`	BOOLEAN	NOT NULL	DEFAULT false	COMMENT '상태',
-	`created_at`	TIMESTAMP	NOT NULL	DEFAULT current_timestamp	COMMENT '등록일자',
-	`updated_at`	TIMESTAMP	NOT NULL	DEFAULT current_timestamp	COMMENT '수정일자'
+	`todo_date`	TIMESTAMP	NOT NULL	COMMENT '일정날짜'
 )
 
-INSERT INTO todos (id, name, status)
+INSERT INTO todos (id, name, status, todo_date)
 VALUES 
-	(10, '할일1', TRUE),
-	(20, '할일2', TRUE),
-	(30, '할일3', FALSE),
-	(40, '할일4', TRUE),
-	(50, '할일5', FALSE)
+	(UUID(), '할일1', TRUE, '2025-02-14 09:00:00'),
+	(UUID(), '할일2', TRUE, '2025-02-14 09:00:00'),
+	(UUID(), '할일3', FALSE, '2025-02-16 09:00:00'),
+	(UUID(), '할일4', TRUE, '2025-02-15 09:00:00'),
+	(UUID(), '할일5', FALSE, '2025-02-17 09:00:00')
+

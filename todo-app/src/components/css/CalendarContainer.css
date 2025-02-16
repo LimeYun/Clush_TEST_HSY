@@ -5,3 +5,23 @@
     border-radius: 10px;
     border: 2px solid lightblue;
 }
+
+.ant-picker-calendar-date-content::-webkit-scrollbar {
+    display: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+

@@ -1,8 +1,10 @@
 package com.yun.todo.mapper;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.yun.todo.domain.Todos;
 
@@ -21,16 +23,11 @@ public interface TodoMapper {
     // id로 조회
     public Todos selectById(String id);
 
-    // 수정
-    public int update(Todos todos);
-
     // id로 수정
     public int updateById(Todos todos);
-
-    // 삭제
-    public int delete(Long no);
 
     // id로 삭제
     public int deleteById(String id);
 
+    public List<Todos> findByTodoDate(@Param("date") LocalDate date);
 }
